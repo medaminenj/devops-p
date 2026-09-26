@@ -9,5 +9,6 @@ public interface IEntrepriseService {
     Entreprise updateEntreprise(Entreprise entreprise);
     void deleteEntreprise(Long id);
     Entreprise getEntrepriseById(Long id);
+
     List<Entreprise> getAllEntreprises();
 }
