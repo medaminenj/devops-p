@@ -1,11 +1,11 @@
-# Étape 1 : Build du fichier JAR avec Maven
+# Étape 1 : Build avec Maven
 FROM maven:3.9.6-eclipse-temurin-17 AS builder
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
 RUN mvn clean package -DskipTests
 
-# Étape 2 : Image d'exécution légère
+# Étape 2 : Runtime léger (JVM)
 FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 COPY --from=builder /app/target/*.jar app.jar
