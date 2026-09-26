@@ -26,5 +26,5 @@ public class ProjetDetaille {
     @JsonIgnore
     @ManyToOne
     private Projet projet;
-    
+
 }

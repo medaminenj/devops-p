@@ -16,7 +16,13 @@ pipeline {
         stage('Build & Test Backend') {
             steps {
                 dir('backend') {
-                    sh 'mvn clean test package'
+                    withCredentials([usernamePassword(
+                        credentialsId: 'MYSQL_CREDENTIALS',
+                        usernameVariable: 'MYSQL_USER',
+                        passwordVariable: 'MYSQL_PASSWORD'
+                    )]) {
+                        sh 'mvn clean test package'
+                    }
                 }
             }
         }
