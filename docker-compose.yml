@@ -9,7 +9,6 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_DATABASE: devops_db
 
-
   backend:
     build: ./backend
     container_name: spring-backend
