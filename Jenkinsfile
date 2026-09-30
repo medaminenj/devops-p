@@ -51,6 +51,8 @@ pipeline {
         }
     }
 
+    
+
     post {
         success {
             echo 'Pipeline executed and application deployed successfully!'
