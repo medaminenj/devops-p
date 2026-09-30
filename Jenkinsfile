@@ -31,8 +31,8 @@ pipeline {
             steps {
                 dir('frontend') {
                     // Install Node dependencies and run tests headlessly
-                    sh 'npm install'
-                    sh 'npx ng test --watch=false --browsers=ChromeHeadless'
+                   sh 'npm ci'
+                   sh 'npx ng test --watch=false'
                 }
             }
         }
