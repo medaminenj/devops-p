@@ -17,11 +17,11 @@ pipeline {
             steps {
                 dir('backend') {
                     withCredentials([usernamePassword(
-                        credentialsId: 'MYSQL_CREDENTIALS',
+                        credentialsId: 'mysql-test-creds',
                         usernameVariable: 'DB_USERNAME',
                         passwordVariable: 'DB_PASSWORD'
                     )]) {
-                        sh 'mvn clean test package -Dspring.datasource.username=${DB_USERNAME} -Dspring.datasource.password=${DB_PASSWORD}'
+                        sh 'mvn clean test package'
                     }
                 }
             }
