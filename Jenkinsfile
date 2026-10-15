@@ -1,3 +1,5 @@
+// Pipeline CI/CD — AppGestionDesProjets (backend Spring Boot + frontend Angular)
+// Déclenché depuis le SCM (Jenkinsfile à la racine du dépôt).
 pipeline {
     agent any
 
